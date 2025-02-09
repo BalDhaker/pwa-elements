@@ -421,7 +421,7 @@ export class CameraPWA {
           <div class="no-device">
             <h2>{this.noDevicesText}</h2>
             {
-              (this.hidePicker === false) && (
+              (!this.hidePicker) && (
                 <div>
                   <label htmlFor="_pwa-elements-camera-input">
                     {this.noDevicesButtonText}

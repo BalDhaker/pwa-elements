@@ -7,7 +7,7 @@ import { h, Event, EventEmitter, Component, Method, Prop } from '@stencil/core';
 })
 export class PWACameraModal {
   @Prop() facingMode: string = 'user';
-  @Prop() hidePicker: boolean = false;
+  @Prop() hidePicker: boolean = true;
 
   @Event() onPhoto: EventEmitter;
   @Event() noDeviceError: EventEmitter;
