@@ -420,16 +420,22 @@ export class CameraPWA {
         {(this.hasCamera === false || !!this.deviceError) && (
           <div class="no-device">
             <h2>{this.noDevicesText}</h2>
+            {
+              (this.hidePicker === false) && (
+                <div>
+                  <label htmlFor="_pwa-elements-camera-input">
+                    {this.noDevicesButtonText}
+                  </label>
+                  <input
+                    type="file"
+                    id="_pwa-elements-camera-input"
+                    onChange={this.handleFileInputChange}
+                    accept="image/*"
+                    class="select-file-button" />
+                </div>
+              )
+            }
 
-            <label htmlFor="_pwa-elements-camera-input">
-              {this.noDevicesButtonText}
-            </label>
-            <input
-              type="file"
-              id="_pwa-elements-camera-input"
-              onChange={this.handleFileInputChange}
-              accept="image/*"
-              class="select-file-button" />
           </div>
         )}
         {/* Show the taken photo for the Accept UI*/}
